@@ -1,21 +1,18 @@
-math = ["charlie", "kevin","alise", "bob", "leo"]
-physics = ["jack", "paolo", "alex", "bob", "charlie"]
-math.insert(input("inter the name of the student you want in math: "))
-print(math)
-physics.insert(2, input("inter the name of the student you want in physics: "))
-print(physics)
-math.sort()
-print("the display of sorted list of math alphabetically: ", math)
-physics.sort()
-print("the display of sorted list of physics alphabetically: ", physics)
-inputName = input("Enter a student name to remove from physics list:  ")
+import turtle
+sideLength = int(input("Enter the size of each side: "))
+screen = turtle.Screen()
+screen.clearscreen()
+hexagon = turtle.Turtle()
+colors = ["#7209B7", "#FEE440","#FF37A6", "#A7C957", "#4CC9F0", "#D67316"]
+hexagon.speed(1)
+hexagon.fillcolor("#FFCAE9")
+hexagon.pensize(2)
+hexagon.begin_fill()
+for i in range(6):
+    hexagon.pencolor(colors[i])
+    hexagon.forward(sideLength)
+    hexagon.right(60)
 
+hexagon.end_fill()
+turtle.done()
 
-if inputName in physics:
-    physics.remove(inputName)
-    print("the Removed student from physics:" ,inputName)
-else:
-    print("Student not found in physics list.")
-
-print("the final list of math students is: ",math)
-print("the final list of physics students is:", physics)
